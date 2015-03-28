@@ -10,6 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var catYears: UILabel!
+    
+    @IBOutlet var ageEnter: UITextField!
+    
+    @IBAction func myButton(sender: AnyObject) {
+        var ageCat = ageEnter.text.toInt()
+        
+        if ageCat != nil{
+            
+        var catEntered = ageCat! * 7
+        catYears.text = "In cat years, your cat is \(catEntered) years old"
+        
+        }
+        
+        else if ageCat == nil{
+            catYears.text = "Please enter a whole number"
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
